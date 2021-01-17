@@ -1,0 +1,27 @@
+<aside>
+<div class="container">
+    <nav>
+        <ul>
+            <li><a href="{{site.url }}">Front page</a></li>
+
+            {% for page in site.pages %} 
+            {% if page.title != "List" and page.title != "Links" %}
+            <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+            {% endif %} 
+            {% endfor %}
+        </ul>
+        </li>
+        </ul>
+    </nav>
+</div>
+</aside>
+<!--
+    <header>
+    <h1><a href="{{site.baseurl}}">{{ site.title }}</a></h1>
+    </header>
+
+    <header>
+    <img id="banner" src="img/Maisemakuva.jpg">
+    </header>
+    <img id="banner" src="{{site.url}}/img/Maisemakuva.jpg">
+-->

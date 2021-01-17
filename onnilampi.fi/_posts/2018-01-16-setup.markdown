@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "setup.onnilampi.fi"
+headline: "How I automated my shell environment installation"
+date:   2018-01-16 00:00:00 +0300
+permalink: /blog/automated-shell-setup/
+language: en
+author: "Onni Lampi"
+categories: jekyll update
+---
+
+*A small walkthrough of a script I cobbled together*
+
+Every time I start using a new shell environment, it takes some effort to get things running as per my preferences.
+That is not really an issue, but as time goes by it is difficult to keep track of the different configurations in different machines:
+"Did I remember to update my `.vimrc` since last updating it on my personal computer?"
+### Requirements for the script
+
+I started by writing down the requirements and quickly come to the conclusion that this is not that difficult of a job.
+
+* The script needs to run smoothly every time.
+* The script can only change things for the user that is currently logged in.
+* No conflicts can happen.
+* The configurations need to be universal.
+* All important dependencies need to be installed by the script.
+* The script can be run anytime, it should not fail if something already exists in the environment.
+* Some customization need to be possible.
+
+### Implementation
+
+After reviewing the list above, I wrote [this](https://github.com/onnilampi/setup).
+The repository also includes all the configurations and the script fetches them from github.
+`setup.onnilampi.fi` redirects directly to the latest version of this script housed in github, so it is easy to just run `bash -c "$(curl -fsSL setup.onnilampi.fi)"` in order to run the script.
